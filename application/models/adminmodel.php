@@ -42,7 +42,7 @@ class adminmodel extends CI_Model {
        $rsesult= $this->db->get("students");
        if($rsesult->num_rows()>0)
        {
-            return $rsesult->result()[0];
+            return $rsesult->result()->row();
         }
         return null;
     }
@@ -52,7 +52,7 @@ class adminmodel extends CI_Model {
        $rsesult= $this->db->get("teachers");
        if($rsesult->num_rows()>0)
        {
-            return $rsesult->result()[0];
+            return $rsesult->result()->row();
         }
         return null;
     }
@@ -306,7 +306,7 @@ public function get_attendence($course,$sem,$from)
     
     return $details->result();
 }
-public function add_result($passout=[],$dropout=[])
+public function add_result($passout=array(),$dropout=array())
 {
     if(count($passout)>0)
    { 

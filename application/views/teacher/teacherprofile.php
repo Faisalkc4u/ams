@@ -111,132 +111,130 @@ foreach($details as $user){
 <td><br><input type="text"  disabled value="<?php echo $user->gender;?>" ></td>
 </tr>
 <tr><td><br>Address</td>
-<td><br><input type="text"  name="address" value="<?php echo $user->address;?>" >
-
-</td>
+<td><br><input type="textarea"  name="address" required></td>
  </tr>
  </div>
  <tr><td><br>District</td>
- <td><br><select name="dist"  >
+ <td><br><select name="dist"  required >
  <option value="">Select District</option>
-<option value="Kasargod" <?php echo  $user->district=='Kasargod'? 'selected=""':'' ?> >Kasargod</option>
-<option value="Kannur" <?php echo  $user->district=='Kannur'? 'selected=""':'' ?> >Kannur</option>
-<option value="Wayanad"  <?php echo  $user->district=='Wayanad'? 'selected=""':'' ?> >Wayanad</option>
-<option value="Kozhikkode"  <?php echo  $user->district=='Kozhikkode'? 'selected=""':'' ?> >Kozhikkode</option>
- <option value="Malappuram"  <?php echo  $user->district=='Malappuram'? 'selected=""':'' ?> >Malappuram</option>
-<option value="Palakkad"  <?php echo  $user->district=='Palakkad'? 'selected=""':'' ?> >Palakkad</option>
-<option value="Thrissur"  <?php echo  $user->district=='Thrissur'? 'selected=""':'' ?> >Thrissur</option>
- <option value="Ernakulam"  <?php echo  $user->district=='Ernakulam'? 'selected=""':'' ?> >Ernakulam</option>
-<option value="Idukki"   <?php echo  $user->district=='Idukki'? 'selected=""':'' ?> >Idukki</option>
-<option value="Kottayam"   <?php echo  $user->district=='Kottayam'? 'selected=""':'' ?> >Kottayam</option>
- <option value="Alappuzha"   <?php echo  $user->district=='Alappuzha'? 'selected=""':'' ?> >Alappuzha</option>
- <option value="Pathanamthitta"   <?php echo  $user->district=='Pathanamthitta'? 'selected=""':'' ?> >Pathanamthitta</option>
-<option value="Kollam"   <?php echo  $user->district=='Kollam'? 'selected=""':'' ?> >Kollam</option>
-<option value="Thiruvananthapuram"   <?php echo  $user->district=='Thiruvananthapuram'? 'selected=""':'' ?> >Thiruvananthapuram</option>
+<option value="Kasargod">Kasargod</option>
+<option value="Kannur">Kannur</option>
+<option value="Wayanad">Wayanad</option>
+<option value="Kozhikkode">Kozhikkode</option>
+ <option value="Malappuram">Malappuram</option>
+<option value="Palakkad">Palakkad</option>
+<option value="Thrissur">Thrissur</option>
+ <option value="Ernakulam">Ernakulam</option>
+<option value="Idukki">Idukki</option>
+<option value="Kottayam">Kottayam</option>
+ <option value="Alappuzha">Alappuzha</option>
+ <option value="Pathanamthitta">Pathanamthitta</option>
+<option value="Kollam">Kollam</option>
+<option value="Thiruvananthapuram">Thiruvananthapuram</option>
 </select></td></tr>
 <tr><td><br>Nationality</td>
-                          <td><br><select name="nationality"  >
+                          <td><br><select name="nationality" required >
                           <option value="">Select</option>                                                      
-                            <option value="Afganistan"  <?php echo  $user->nationality=='Afganistan'? 'selected=""':'' ?> >Afghanistan</option>
-                            <option value="Albania"   <?php echo  $user->nationality=='Albania'? 'selected=""':'' ?> >Albania</option>
-                            <option value="Algeria"   <?php echo  $user->nationality=='Algeria'? 'selected=""':'' ?> >Algeria</option>
-                            <option value="Bahrain"   <?php echo  $user->nationality=='Bahrain'? 'selected=""':'' ?> >Bahrain</option>
-                            <option value="Bangladesh"   <?php echo  $user->nationality=='Bangladesh'? 'selected=""':'' ?> >Bangladesh</option>
-                            <option value="Brazil"   <?php echo  $user->nationality=='Brazil'? 'selected=""':'' ?> >Brazil</option>
-                            <option value="Canada"   <?php echo  $user->nationality=='Canada'? 'selected=""':'' ?> >Canada</option>
-                            <option value="Denmark"   <?php echo  $user->nationality=='Denmark'? 'selected=""':'' ?> >Denmark</option>
-                            <option value="Egypt"   <?php echo  $user->nationality=='Egypt'? 'selected=""':'' ?> >Egypt</option>
-                            <option value="Finland"   <?php echo  $user->nationality=='Finland'? 'selected=""':'' ?> >Finland</option>
-                            <option value="France"   <?php echo  $user->nationality=='France'? 'selected=""':'' ?> >France</option>
-                            <option value="Georgia"   <?php echo  $user->nationality=='Georgia'? 'selected=""':'' ?> >Georgia</option>                                                          
-                            <option value="Germany"   <?php echo  $user->nationality=='Germany'? 'selected=""':'' ?> >Germany</option>                                                            
-                            <option value="Hong Kong"   <?php echo  $user->nationality=='Hong Kong'? 'selected=""':'' ?> >Hong Kong</option>                
-                            <option value="Hungary"   <?php echo  $user->nationality=='Hungary'? 'selected=""':'' ?> >Hungary</option>                
-                            <option value="Iceland"   <?php echo  $user->nationality=='Iceland'? 'selected=""':'' ?> >Iceland</option>            
-                            <option value="Indonesia"    <?php echo  $user->nationality=='Indonesia'? 'selected=""':'' ?> >Indonesia</option>                    
-                            <option value="India"   <?php echo  $user->nationality=='India'? 'selected=""':'' ?> >India</option>                      
-                            <option value="Iran"   <?php echo  $user->nationality=='Iran'? 'selected=""':'' ?> >Iran</option>                      
-                            <option value="Iraq"   <?php echo  $user->nationality=='Iraq'? 'selected=""':'' ?> >Iraq</option>                
-                            <option value="Ireland"   <?php echo  $user->nationality=='Ireland'? 'selected=""':'' ?> >Ireland</option>                    
-                            <option value="Jamaica"   <?php echo  $user->nationality=='Jamaica'? 'selected=""':'' ?> >Jamaica</option>                                                                   
-                            <option value="Japan"   <?php echo  $user->nationality=='Japan'? 'selected=""':'' ?> >Japan</option>                                                                
-                            <option value="Jordan"   <?php echo  $user->nationality=='Jordan'? 'selected=""':'' ?> >Jordan</option>
+                            <option value="Afganistan">Afghanistan</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Brazil">Brazil</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Egypt">Egypt</option>
+                            <option value="Finland">Finland</option>
+                            <option value="France">France</option>
+                            <option value="Georgia">Georgia</option>                                                          
+                            <option value="Germany">Germany</option>                                                            
+                            <option value="Hong Kong">Hong Kong</option>                
+                            <option value="Hungary">Hungary</option>                
+                            <option value="Iceland">Iceland</option>            
+                            <option value="Indonesia">Indonesia</option>                    
+                            <option value="India">India</option>                      
+                            <option value="Iran">Iran</option>                      
+                            <option value="Iraq">Iraq</option>                
+                            <option value="Ireland">Ireland</option>                    
+                            <option value="Jamaica">Jamaica</option>                                                                   
+                            <option value="Japan">Japan</option>                                                                
+                            <option value="Jordan">Jordan</option>
                     </select></td></tr>
                     <div class="input-group mg-b-pro-edt">
-                            <tr><td><br>Aadhar Number</td>
-                            <td><br><input type="text" name="aadhar" value="<?php echo $user->aadhar;?>" >
-                            </td></tr>
-                            <tr><td><br>Qualification</td>
-                            <td><br><input type="text" disabled value="<?php echo $user->qualificn;?>" >
-                            </td></tr>
-                            <tr><td><br>SSLC Mark Percentage</td>
-                            <td><br><input type="text" name="sslc" value="<?php echo $user->sslcmark;?>">
-                            </td></tr>      
+<tr><td><br>Aadhar Number</td>
+<td><br><input type="text" name="aadhar" required>
+</td></tr>
+<tr><td><br>Qualification</td>
+<td><br><input type="text" disabled value="<?php echo $user->qualificn;?>" >
+</td></tr>
+<tr><td><br>SSLC Mark Percentage</td>
+<td><br><input type="text" name="sslc" required>
+ </td></tr>      
 </div>  
  <tr><td><br>Plus Two Stream</td>
- <td><br><select name="plustream"  >
+ <td><br><select name="plustream" required >
 <option value="">Select Stream</option>
-<option value="Biology Science"  <?php echo  $user->plustwostream=='Biology Science'? 'selected=""':'' ?> >Biology Science</option>
-<option value="Computer Science" <?php echo  $user->plustwostream=='Computer Science'? 'selected=""':'' ?>>Computer Science</option>
-<option value="Commerce with Finance" <?php echo  $user->plustwostream=='Commerce with Finance'? 'selected=""':'' ?>>Commerce with Finance</option>
-<option value="Commerce with Computer" <?php echo  $user->plustwostream=='Commerce with Computer'? 'selected=""':'' ?>>Commerce with Computer</option>
+<option value="Biology Science">Biology Science</option>
+<option value="Computer Science">Computer Science</option>
+<option value="Commerce with Finance">Commerce</option>
+<option value="Commerce wuth Computer">Humanities</option>
 </select></td></tr>
 <div class="input-group mg-b-pro-edt">
 <tr><td><br>Plus Two Mark Percentage</td>
-<td><br><input type="text" name="plusmark" value="<?php echo $user->plustwomark;?>" ></td>
+<td><br><input type="text" name="plusmark"  required></td>
 </tr>
 </div>                                                          
 <tr><td><br>Degree Stream</td>
-<td><br><select name="dstream"   >
+<td><br><select name="dstream"  required >
 <option value="">Select Stream</option>
-<option value="BCA" <?php echo  $user->degreestream=='BCA'? 'selected=""':'' ?>>BCA</option>
-<option value="BSc" <?php echo  $user->degreestream=='BSc'? 'selected=""':'' ?>>BSc</option>                                                        
+<option value="BCA">BCA</option>
+<option value="BSc">BSc</option>                                                        
 </select></td></tr>
 <div class="input-group mg-b-pro-edt">
 <tr><td><br>Degree Mark Percentage</td>
-<td><br><input type="text" name="dgree" value="<?php echo $user->degreemark;?>" ></td>
+<td><br><input type="text" name="dgree" required></td>
 </tr>
 <tr><td><br>University Name </td>
-<td><br><input type="text" name="uguni" value="<?php echo $user->uguniversity;?>" ></td>
+<td><br><input type="text" name="uguni" required></td>
 </tr>
 
 <tr><td><br>PG Stream</td>
-<td><br><select name="pgstream"  >
+<td><br><select name="pgstream" required >
 <option value="">Select Stream</option>
-<option value="MCA" <?php echo  $user->pgstream=='MCA'? 'selected=""':'' ?>>MCA</option>
-<option value="MSc" <?php echo  $user->pgstream=='MSc'? 'selected=""':'' ?>>MSc</option>
+<option value="MCA">MCA</option>
+<option value="MSc"MSc</option>
 </select></td></tr>
 <tr><td><br>PG Mark Percentage</td> 
-<td><br><input type="text"  name="pg" value="<?php echo $user->pgmark;?>"  ></td>
+<td><br><input type="text"  name="pg"  required></td>
 </tr>
 <tr><td><br>University Name</td>
-<td><br><input type="text" name="pguni" value="<?php echo $user->pguniversity;?>" ></td>
+<td><br><input type="text" name="pguni" required></td>
 </tr>
 
 <tr><td><br>MPhil Qualification</td>
-<td><br><select name="mquali"  >
+<td><br><select name="mquali" required >
 <option value="">Select</option>
-<option value="Yes" <?php echo  $user->mphil=='Yes'? 'selected=""':'' ?>>Yes</option>
-<option value="No" <?php echo  $user->mphil=='No'? 'selected=""':'' ?>>No</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
 </select></td></tr>
 <tr><td><br>PhD Qualification</td>
-<td><br><select name="phdquali"  >
+<td><br><select name="phdquali" required >
 <option value="">Select</option>
-<option value="Yes"  <?php echo  $user->phd=='Yes'? 'selected=""':'' ?>>Yes</option>
-<option value="No"  <?php echo  $user->phd=='No'? 'selected=""':'' ?>>No</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
 </select></td></tr>
 <tr><td><br>Other Qualification</td>
-<td><br><input type="text" name="oquali"  value="<?php echo $user->otherquali;?>"></td>
+<td><br><input type="textarea" name="oquali"></td>
 </tr>
-<tr><td><br>NET</td>
-<td><br><input type="text" disabled name="net"  value="<?php echo $user->net;?>"></td>
+<tr><td><br>NET/JRF Qualification</td>
+<td><br><input type="text" name="net" value="<?php echo $user->;net?>"disabled></td>
 </tr>
 <div class="input-group mg-b-pro-edt">
 <tr><td><br>Experience</td>
 <td><br><input type="text" name="exp" value="<?php echo $user->experience;?>"disabled></td>
 </tr>
 <tr><td><br>Designation</td>
-<td><br><input type="text"  disabled value="<?php echo $user->designation;?>"></td>
+<td><br><input type="text"  disabled value="<?php echo $user->designation;?>" disabled ></td>
 </td>
 <tr><td><br>Status</td>
 <td><br><input type="text" name="status" value="<?php echo $user->status;?>" disabled></td></tr>

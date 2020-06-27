@@ -529,7 +529,7 @@ class Adminctlr extends CI_Controller {
                 $data['semester']=$semester;
                 $data['subjects']=$this->adminmodel->getsubjects($course,$semester);
                 $data['lecture']=$this->adminmodel->getAllTeachers();
-                $timetable=[];
+                $timetable=array();
                 $result=$this->adminmodel->get_student_timetable($course,$semester);
                 foreach ($result as $value)
                 {
@@ -547,16 +547,16 @@ class Adminctlr extends CI_Controller {
 $tid=$this->input->get('tid');
 if($tid)
 {
-    $timetable=[];
+    $timetable=array();
     $this->load->model("adminmodel","",true);
     $result=$this->adminmodel->get_teacher_timetable($tid);
     foreach ($result as $value) {
         $timetable[$value->weekday][$value->period]=$value->course.'-'.$value->semester.'-'.$value->subject;
         }
-    $this->load->view('admin/teacher_timetable',['table'=>$timetable]);
+    $this->load->view('admin/teacher_timetable',array('table'=>$timetable));
 }    
 else
-    $this->load->view('admin/teacher_timetable',);
+    $this->load->view('admin/teacher_timetable');
 }
      
 public function courserem()
@@ -811,7 +811,7 @@ public function courserem()
                  $output.='<tr> <td>'. $row->adno.'</td>
                                                 <td>'.$row->name.'</td>
                                                 <td >
-                                                <input type="checkbox" name="id[]" value="'.$row->adno.'"  /> 
+                                                <input type="checkbox" name="idarray()" value="'.$row->adno.'"  /> 
                                                 ';                                               
                                            
                                                 
@@ -846,7 +846,7 @@ switch ($action) {
     case 'pass':
         if($admissionnumber && count($admissionnumber)>0)
         {
-            $info=$this->adminmodel->add_result($admissionnumber,[]);
+            $info=$this->adminmodel->add_result($admissionnumber,array());
             if($info==true)
             $this->session->set_flashdata('Success','Result Added Successfully');
             else
@@ -858,7 +858,7 @@ switch ($action) {
         case 'fail':
         if($admissionnumber && count($admissionnumber)>0)
         {
-            $info=$this->adminmodel->add_result([],$admissionnumber);
+            $info=$this->adminmodel->add_result(array(),$admissionnumber);
             if($info==true)
             $this->session->set_flashdata('Success','Result Added Successfully');
             else
@@ -888,7 +888,7 @@ switch ($action) {
         $this->load->model("adminmodel","",true);   
            
         if($course){
-            $data=[];
+            $data=array();
             $data['course']=$course;
             $data['semester']=$sem;
             $data['weekday']=$weekday;

@@ -519,7 +519,7 @@ class Adminctlr extends CI_Controller {
 }
     public function student_tmtbl()
     {
-            $data=[];
+            $data="";
             $this->load->model("adminmodel","",true);
             $course=$this->input->post("course");
             $semester=$this->input->post("semester");

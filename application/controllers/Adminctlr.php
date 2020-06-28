@@ -527,7 +527,7 @@ class Adminctlr extends CI_Controller {
             {
                 $data['course']=$course;
                 $data['semester']=$semester;
-                $data['subjects']=$this->adminmodel->getsubjects($course,$semester);
+                $data['subject']=$this->adminmodel->getsubjects($course,$semester);
                 $data['lecture']=$this->adminmodel->getAllTeachers();
                 $timetable=array();
                 $result=$this->adminmodel->get_student_timetable($course,$semester);

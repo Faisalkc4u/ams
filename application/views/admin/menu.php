@@ -38,7 +38,6 @@
                                 <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/inmark"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Internal Mark </span></a></li>
                                 <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/attendance"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Attendance </span></a></li>
                                  <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/course"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Course </span></a></li>
-                                  <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/timetable"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">TimeTable </span></a></li>
                                 <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/pass_out"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Pass Out List </span></a></li>
                                 <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/drop_out"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Drop Out List</span></a></li>
                             </ul>

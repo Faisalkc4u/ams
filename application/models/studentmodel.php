@@ -33,43 +33,38 @@ public function apply_leave($data)
 }
 public function get_internals($course,$sem){
     $adno=$this->session->userdata('adno');
+    
    $this->db->where('regNo',$adno);
-   $this->db->where('course',$course);
-   $this->db->where('semester',$sem);
     $details=$this->db->get('inmark');
     
     return $details->result();
 }
-public function get_attendence($course,$sem){
+public function get_attendence(){
    
     $adno=$this->session->userdata('adno');
-     $this->db->where('course',$course);
-   $this->db->where('semester',$sem);
-   $query=  $this->db->get('attendence_id');
-   $c=count($query->result());
-      if($c==""){
-        return;
-    }
-   else{
-   $this->db->where('course',$course);
-   $this->db->where('semester',$sem);
-      
-   $this->db->limit(1);
-   $id = $this->db->get('attendence_id')-> row()->Id;
-   
-    $this->db->where('adno',12345);
-   $this->db->where('Id',$id);
-    $this->db->where('status','present');
-    $query=$this->db->get('attendence');
+    $from='';
+        $month=date('m');
+      if($month<=6){
+        $from=date('Y').'-06-01';
+      }else
+      {
+        $from=date('Y')-1;
+        $from.='-06-01';
+      }
     
-    return $query->num_rows();
-   }
+    $this->db->select("students.*, (select count(*) from  attendence where attendence.adno=students.adno and attendence.status='present' and date>$from and  attendence.atsem=students.sem  ) as present,(select count(*) from  attendence where attendence.adno=students.adno and attendence.status='absent' and date>$from and  attendence.atsem=students.sem ) as absent");
+    $this->db->where('adno',$adno);
+    
+    $query=  $this->db->get('students');
+    return $query->result();
 
     }
-public function get_assignment($course,$sem){
-  
-   $this->db->where('course',$course);
-   $this->db->where('semester',$sem);
+public function get_assignment(){
+    $adno=$this->session->userdata('adno');
+    $this->db->join("students","students.course=assignment.course");
+    $this->db->where('yearofpass  is NULL',NULL);  
+    $this->db->where('yearofdrop is NULL',NULL);
+    $this->db->where('students.adno',$adno);
     $details=$this->db->get('assignment');
     
     return $details->result();

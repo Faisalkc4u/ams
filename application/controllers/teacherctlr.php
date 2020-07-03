@@ -3,14 +3,30 @@
 class teacherctlr extends CI_Controller {
 
     
-    public function internal_marks(){
+    public function internal_marks()
+    {
         $this->load->model("adminmodel","",true);
-        $data['details']=$this->adminmodel->course_details();
+        $data=array();
         if($this->input->get("adno"))
         {
-            $this->load->model("adminmodel","",true);
-            $data['student']=$this->adminmodel->getStudentById($this->input->get("adno"));
+            $stundetList=$this->adminmodel->getStudentById($this->input->get("adno"));
+            if(sizeof($stundetList)>0)
+            {
+
+                $data['student']=$stundetList[0];
+                $data['subject']=$this->adminmodel->getsubjects($stundetList[0]->course,$stundetList[0]->sem);
+            }
         }
+        if($this->input->get("subject") && $this->input->get("adno")&&$this->input->get("sem") )
+        {
+            $data['selsubject']=$this->input->get("subject");
+            $inkMarklist=$this->adminmodel->get_student_internals($this->input->get("adno"),$this->input->get("subject"),$this->input->get("sem"));
+            if(sizeof($inkMarklist)>0)
+            {
+                $data['inmark']=$inkMarklist[0];
+            }
+        }
+
         $this->load->view('teacher/internal_marks',$data);
     }
     public function time_table(){
@@ -31,6 +47,16 @@ class teacherctlr extends CI_Controller {
     }
     public function attendence()
     {
+        $this->load->model("teachermodel","",true);
+        
+        if(($this->input->post('attend')))
+        {
+            $this->teachermodel->add_attendence($this->input->post('attend'),$this->input->post('period'),$this->input->post('date'),$this->input->post('type'),$this->input->post('subject'));
+        }
+        if(($this->input->post('update')))
+        {
+            $this->teachermodel->update_attendence($this->input->post('update'),$this->input->post('type'));
+        }
             $this->load->model("adminmodel","",true);
 	        $data['details']=$this->adminmodel->course_details();
             $this->load->view('teacher/attendence',$data);
@@ -144,8 +170,9 @@ class teacherctlr extends CI_Controller {
     }
     public function addinternal_marks(){
     $marks=array(
+        
+        "docId"=>$this->input->post("id"),
         "regno"=>$this->input->post("adno"),
-        "name"=>$this->input->post("name"),
         "semester"=>$this->input->post("semester"),
         "course"=>$this->input->post("course"),
         "subject"=>$this->input->post("subject"),
@@ -153,7 +180,7 @@ class teacherctlr extends CI_Controller {
         "max_mark"=>$this->input->post("maxmark"),
         "firstin"=>$this->input->post("firstin"),
         "secondin"=>$this->input->post("secondin"),
-        "thirdin"=>$this->input->post("thirdin"),
+        "thirdin"=>$this->input->post("threein"),
         "seminar"=>$this->input->post("seminar"),
         "assignment"=>$this->input->post("assignment"),
         "total"=>$this->input->post("total"));
@@ -167,7 +194,8 @@ class teacherctlr extends CI_Controller {
       else{
             $this->session->set_flashdata('Failed','Failed to add internals');
         }
-        $this->load->view('teacher/internal_marks');
+        header('Location: '.$_SERVER['HTTP_REFERER']);
+      
     }
         public function add_assignment(){
     $assignment=array(
@@ -194,11 +222,17 @@ class teacherctlr extends CI_Controller {
    public function add_attendence(){
       $output  = "";
       $data=$this->input->get('data');
-        list($course,$sem,$period,$date)= explode('|', $data);
+      list($course,$sem,$period,$date)= explode('|', $data);
       $this->load->model("teachermodel","",true);
-      $result=$this->teachermodel->get_students($course,$sem);
-   
-        $output.='
+      $this->load->model("adminmodel","",true);
+      
+      $result=$this->teachermodel->get_students_attendance($course,$sem,$period,$date);
+      $subjects=$this->adminmodel->getsubjects($course,$sem);
+      $output.='
+      <form method="post">';
+      $output.="<input type='hidden' name='date' value='$date'>";
+      $output.="<input type='hidden' name='period' value='$period'>";
+      $output.='
             <div class="table-responsive">
             <table class="table table-bordered table-striped">
                         <tr>
@@ -214,41 +248,13 @@ class teacherctlr extends CI_Controller {
                  {
                  $output.='<tr> <td>'. $row->adno.'</td>
                                                 <td>'.$row->name.'</td>
-                                                <td ><a class="btn btn-primary" id="present" style="padding:6px;"  data-id="'.$row->adno.'"onClick=" return theFunction(this.dataset.id);">'."present".'</a><a  class="btn btn-danger" id="absent" style="margin:5px" onClick="myFunction('.$row->adno.');">'."absent".'</a></td>';                                               
-                                           
+                                                <td >';                                            
+                                                $output.=($row->sno)?
+                                                "<input type='checkbox' name='update[]' value='$row->sno'>".strtoupper($row->status):"<input type='checkbox' name='attend[]' value='$row->adno'>";             
+                                                $output.= '</td>
                                                 
-                                                    ?> 
-<script>
-    var present = [];
-var absent=[];
-     function theFunction(adno){
-      if(adno==''||adno==null){
-          return present;
-      }
-//         document.getElementById('present').style.color="blue"; 
-            present.push(adno);
-            
-     }
-
-     function myFunction(adno){ 
-         if(adno==''||adno==null){
-          return absent;
-      }
-//          document.getElementById('absent').style.color="blue"; 
-         absent.push(adno);
-        
-         return absent;
-        }
-       function storeAttendence(){ 
-         var period="<?php echo $period; ?>";
-         var present=theFunction();
-        
-         var absent=myFunction();
-        
-      window.location="<?php echo base_url();?>index.php/teacherctlr/store_attendence?period="+period+"|"+present+"|"+absent;
-      }
-        
-	   </script><?php
+                                                ';                                               
+     
                                                                                                       
                                                $output.= '</tr>';
              } }
@@ -256,11 +262,22 @@ var absent=[];
                $output.='<tr><td colspan=9>No data found</td></tr>';
                        
            }
-           $output.="</table>";
-            $output.='<input type=submit onClick="storeAttendence('.$period.');">';
-    
+           $output.="</table>  <select name='subject' >";
+           foreach ($subjects as $subject) {
+            $output.="<option value='".$subject->subcode."'>".$subject->subcode."</option>";
+           }
+          
+          
+          $output.="</select> 
+           
+           <input type='submit' name='type' value='Present'>
+           
+           <input type='submit' name='type' value='Absent'>
+
+           </form>
+           ";
            echo $output;
-                
+               
     }
 
     public function store_attendence(){
@@ -286,6 +303,7 @@ var absent=[];
 	   </script>
 	   <?php
     }
+    // This part is not used
     public function view_attendence(){
       $output  = " ";
       $data=$this->input->get('data');

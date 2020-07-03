@@ -333,7 +333,7 @@ class Adminctlr extends CI_Controller {
     public function attendance()
 	{
         $this->load->model("adminmodel","",true);
-	$data['details']=$this->adminmodel->course();
+	    $data['details']=$this->adminmodel->course();
 		$this->load->view('admin/attendance',$data);
     }
     public function course()
@@ -590,9 +590,11 @@ public function courserem()
             <table class="table table-bordered table-striped">
                         <tr>
                         <th>Name</th>
+                        <th>Semester</th>
+                        <th>Subject</th>
                         <th>1st Internal</th>
                         <th>2st Internal</th>
-                       <th>3st Internal</th>
+                        <th>3st Internal</th>
                         <th >Final</th>
                         <th>Assignment</th>
                         <th >Seminar</th>
@@ -604,6 +606,8 @@ public function courserem()
                  foreach($info as $row)
                  {
                      $output.='<tr> <td>' . $row->name . '</td>
+                     <td>' . $row->semester . '</td>
+                     <td>' . $row->subject . '</td>
                                                 <td>' . $row->firstin . '</td>
                                                      <td>' . $row->secondin . '</td>
                                                           <td>' . $row->thirdin . '</td>

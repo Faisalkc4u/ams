@@ -36,29 +36,48 @@ class studentctlr extends CI_Controller {
     }
     public function timetable()
     {
-     $this->load->model("adminmodel","",true);
-	$data['details']=$this->adminmodel->course_details();
+        $this->load->model("adminmodel","",true);
+        $this->load->model("studentmodel","",true);
+
+        $student=$this->studentmodel->student_details();
+        $student=$student[0];
+        $course=$student->course;
+        $semester=$student->sem;
+        $data['course']=$course;
+        $data['semester']=$semester;
+        $data['subject']=$this->adminmodel->getsubjects($course,$semester);
+        $data['lecture']=$this->adminmodel->getAllTeachers();
+        $timetable=array();
+        $result=$this->adminmodel->get_student_timetable($course,$semester);
+        foreach ($result as $value)
+        {
+            $timetable[$value->weekday][$value->period]=$value->subject.'-'.$value->name;
+        }
+        $data['table']=$timetable;
+
+	    $data['details']=$this->adminmodel->course_details();
         $this->load->view('student/timetable',$data);
     }
     public function studattend()
     {
-        $this->load->model("adminmodel","",true);
-	$data['details']=$this->adminmodel->course_details();
+        $this->load->model("studentmodel","",true);
+        $data['info']=$this->studentmodel->get_attendence();
         $this->load->view('student/studattend',$data);
     }
     
      public function assignment()
     {
-        $this->load->model("adminmodel","",true);
-	$data['details']=$this->adminmodel->course_details();
+        
+        $this->load->model("studentmodel","",true);
+        $data['info']=$this->studentmodel->get_assignment();
         
         $this->load->view('student/assignment',$data);
     }
     public function internals()
     {
-        $this->load->model("adminmodel","",true);
-	$data['details']=$this->adminmodel->course_details();
         
+        $this->load->model("studentmodel","",true);
+	    $data['internals']=$this->studentmodel->get_internals($this->session->userdata('course'),$this->session->userdata('sem'));
         $this->load->view('student/internal',$data);
     }
     public function leaveapply()
@@ -225,13 +244,12 @@ class studentctlr extends CI_Controller {
                         <th>Name</th>
                         <th>1st Internal</th>
                         <th>2st Internal</th>
-                       <th>3st Internal</th>
-                        <th >Final</th>
+                        <th>3st Internal</th>
+                        <th>Final</th>
                         <th>Assignment</th>
-                        <th >Seminar</th>
-                        <th >Total</th>
-                        
-                     </tr>'
+                        <th>Seminar</th>
+                        <th>Total</th>
+                        </tr>'
                   ;
              if(!empty($info)) {
                  foreach($info as $row)
@@ -330,8 +348,8 @@ class studentctlr extends CI_Controller {
            echo $output;
                 
     }
-        public function view_timetable(){
-      $output  = " ";
+    public function view_timetable(){
+      $output  = "";
       $data=$this->input->get('data');
       list($course,$sem)= explode('|', $data);
     

@@ -39,10 +39,10 @@ class adminmodel extends CI_Model {
     public function getStudentById($var = null)
     {
         $this->db->where("adno",$var);
-       $rsesult= $this->db->get("students");
-       if($rsesult->num_rows()>0)
-       {
-            return $rsesult->result()->row();
+        $rsesult= $this->db->get("students");
+        if($rsesult->num_rows()>0)
+        {
+            return $rsesult->result();
         }
         return null;
     }
@@ -230,11 +230,21 @@ public function change_teacher_pass($teacherid,$newpass){
     
 }
 public function get_internals($course,$sem){
-   
-   $this->db->where('course',$course);
+    $this->db->select('inmark.*,students.name as name ,students.yearofpass as yearofpass,students.yearofdrop as yearofdrop ');
+   $this->db->join('students','students.adno=inmark.regNo');
+   $this->db->where('students.course',$course);
    $this->db->where('semester',$sem);
+   $this->db->where('yearofpass',NULL);  
+   $this->db->where('yearofdrop',NULL);     
     $details=$this->db->get('inmark');
     
+    return $details->result();
+}
+public function get_student_internals($reg,$course,$sem){
+    $this->db->where('subject',$course);
+    $this->db->where('semester',$sem);
+    $this->db->where('regNo',$reg);
+    $details=$this->db->get('inmark');
     return $details->result();
 }
 public function course(){
@@ -272,7 +282,7 @@ public function get_teacher_timetable($tid){
         return $details->result();
   
 }
-public function get_attendence($course,$sem,$from)
+public function get_attendence($course,$sem,$from=null)
 {
 
 
@@ -287,6 +297,17 @@ public function get_attendence($course,$sem,$from)
     
     // $this->db->group_by('attendence.status');
     // $query=  $this->db->get('attendence');
+    if(!$from)
+    {
+        $month=date('m');
+      if($month<=6){
+        $from=date('Y').'-06-01';
+      }else
+      {
+        $from=date('Y')-1;
+        $from.='-06-01';
+      }
+    }
     $this->db->select("students.*, (select count(*) from  attendence where attendence.adno=students.adno and attendence.status='present' and date>$from and  attendence.atsem=$sem  ) as present,(select count(*) from  attendence where attendence.adno=students.adno and attendence.status='absent' and date>$from and  attendence.atsem=$sem  ) as absent");
     $this->db->where('course',$course);
     $this->db->where('sem',$sem);

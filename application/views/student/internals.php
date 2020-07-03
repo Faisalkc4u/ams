@@ -81,14 +81,16 @@ echo form_open("studentctlr/inter");
 </td></tr></div>
 
 <tr><td><br>Course</td>
-<td><br><select name="Course" required >
+<td><br>
+<select name="Course" required >
 <option value="">Select Course</option>
 <option value="MCA(LE)">MCA</option>
 <option value="MCA(R)">MCA(LE)</option>
 <option value="MSc">MSc</option>
 <option value="MPhil">MPhil</option>
 <!--<option value="PhD">PhD</option>-->
-</select></td></tr>
+</select>
+</td></tr>
 <tr><td><br>Semester</td>
 <td><br><select name="seme"required >
 <option value="">Select Semester</option>

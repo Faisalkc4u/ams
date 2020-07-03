@@ -99,6 +99,29 @@
       <span class="input-group-text" id="inputGroup-sizing-default">Student Regno</span>
     </div>
       <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" name = "adno" value="<?php echo isset($student)?$student->adno:'' ?>"  required>
+  <?php
+  if(isset($subject))
+  {
+    ?>
+     <div class="input-group mb-3"> 
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Student Regno</span>
+    </div>
+    <?php
+   if(isset($student))
+    echo '<input type="hidden" name="sem" value="'.$student->sem.'">';?>
+    <select name="subject" >
+    
+   <?php 
+    foreach ($subject as $sub ) {
+      echo " <option value='".$sub->subcode."'>".$sub->subname."</option>";
+    }
+   ?>
+    </select>
+    </div>
+    <?php
+  }
+?>
   <input type = "submit" value = "Search">
   </div>
 </form>
@@ -126,70 +149,71 @@ if(isset($student))
  <span class="input-group-text" id="inputGroup-sizing-default">Semester</span>
   </div>
   <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" value="<?php echo $student->sem; ?>"  disabled>
+  <input type = "hidden" name = "course" value="<?php echo $student->course; ?>"  >
   <input type = "hidden" name = "semester" value="<?php echo $student->sem; ?>"  >
-    
-</div>
+  <input type = "hidden" name = "adno" value="<?php echo $student->adno ?>" >
+  <input type = "hidden" name = "subject" value="<?php echo isset($selsubject)?$selsubject:'' ?>"  > 
+  <input type = "hidden" name = "id" value="<?php echo (isset($inmark))? $inmark->docId:'' ?>" >
+</div> 
+<?php if(isset($selsubject))
+{
 
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Subject</span>
-    </div>
-    <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" name = "subject" required >
-</div>
- 
+?>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Min Marks</span>
   </div>
-  <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "number" name = "minmark" required >
+  <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "number" name = "minmark" value="<?php echo (isset($inmark))? $inmark->min_marks:'' ?>"  required >
 </div> 
  <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Max Marks</span>
   </div>
-    <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "number" name = "maxmark" required >
+    <input class="form-control" aria-label="Default" onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "maxmark" value="<?php echo (isset($inmark))? $inmark->max_mark:'' ?>" required >
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">First Internal</span>
   </div>
-      <input class="form-control prc" id="first" aria-label="Default"  aria-describedby="inputGroup-sizing-default" type = "number" name = "firstin" >
+      <input class="form-control prc" id="first" aria-label="Default" onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "firstin" value="<?php echo (isset($inmark))? $inmark->firstin:'' ?>" >
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Second Internal</span>
   </div>
-      <input class="form-control prc" id="second" aria-label="Default"   aria-describedby="inputGroup-sizing-default" type = "number" name = "secondin"  >
+      <input class="form-control prc" id="second" aria-label="Default"  onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "secondin" value="<?php echo (isset($inmark))? $inmark->secondin:'' ?>" >
 </div> 
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Third Internal</span>
   </div>
-     <input class="form-control prc"  id="third" aria-label="Default"   aria-describedby="inputGroup-sizing-default" type = "number" name = "threein"  >
+     <input class="form-control prc"  id="third" aria-label="Default" onblur="store(this)"  aria-describedby="inputGroup-sizing-default" type = "number" name = "threein" value="<?php echo (isset($inmark))? $inmark->thirdin:'' ?>" >
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Seminar</span>
   </div>
-    <input class="form-control prc" id="sem" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "number" name = "seminar" required >
+    <input class="form-control prc" id="sem" aria-label="Default" onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "seminar" value="<?php echo (isset($inmark))? $inmark->seminar:'' ?>" required >
 </div>
 <div class="input-group mb-3">
   <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Assignment</span>
   </div>
-     <input class="form-control prc" id="assign" aria-label="Default" onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "assignment" required >
+     <input class="form-control prc" id="assign" aria-label="Default" onblur="store(this)" aria-describedby="inputGroup-sizing-default" type = "number" name = "assignment" value="<?php echo (isset($inmark))? $inmark->assignment:'' ?>" required >
 </div>    
         
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text" id="inputGroup-sizing-default">Total Marks</span>
   </div>
-    <input class="form-control" id="result" aria-label="Default"  value=""  aria-describedby="inputGroup-sizing-default" type = "number" name = "total" readonly>
+    <input class="form-control" id="result" aria-label="Default"   value="<?php echo (isset($inmark))? $inmark->total:'' ?>"  aria-describedby="inputGroup-sizing-default" type = "number" name = "total" readonly>
 </div>        
         
      <input type = "submit" value = "Save">
     
-<?php  echo form_close();
+<?php  
+}
+echo form_close();
 }
 ?>
     </div>

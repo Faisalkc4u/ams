@@ -227,7 +227,7 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
          function load_data(course,sem){
       
         $.ajax({
-           url:"<?php echo base_url();?>index.php/teacherctlr/view_attendence?data="+course+"|"+sem,
+           url:"<?php echo base_url();?>index.php/Adminctlr/view_attendence?data="+course+"|"+sem,
            method:"get",
            
            success:function(data){

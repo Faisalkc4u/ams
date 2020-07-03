@@ -137,29 +137,33 @@
          <option value="6">6</option>
     </select> 
 </div>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-    </div>
-    <input type="date" name="date" id="date">
-</div>          
-    <span class="input-group-btn">
-        <button type="button" id="myBtn">Search</button>
-    </span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+            </div>
+            <input type="date" name="date" id="date">
+        </div>          
+        <span class="input-group-btn">
+            <button type="button" id="myBtn">Search</button>
+        </span>
                    
     </div> 
-    <div class="col-sm">
-      
-    </div>
-  
+    <div class="col-sm"></div>
   </div> 
     <br>
     <div class="row">
         <div  id="result"class="col-sm">
             
         </div>
+        
     </div>
-
+    
+ 
+    <button id='selectall'>
+           Select All
+           </button>
+    <div>
+        </div>
 
       
 <!-- Footer Area Start -->
@@ -240,16 +244,23 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
     <!-- Active -->
     <script src="<?php echo base_url();?>/js/default-assets/active.js"></script>
     <script>
- 
+
         $(document).ready(function(){
-         
+            $("#selectall").click(function(){
+                if (! $('input:checkbox').is('checked')) {
+      $('input:checkbox').prop('checked',true);
+  } else {
+      $('input:checkbox').prop('checked', false);
+  } 
+            }
+            );
          $("#myBtn").click(function(){
         
          var course = $("#course").val();
          var sem=$("#sem").val();
          var period=$("#period").val();
          
-  var dateval = new Date($('#date').val());
+         var dateval = new Date($('#date').val());
          var day = dateval.getDate();
          var month = dateval.getMonth() + 1;
          var year = dateval.getFullYear();

@@ -74,43 +74,8 @@
     <div class="col-sm">
                 <h3>View Attendence</h3>
 
-
-<div class="input-group mb-3"> 
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course</span>
-  </div>
-    <select class="form-control"  id="course"aria-label="Default" aria-describedby="inputGroup-sizing-default" name="course"  reqired>
-        <option value="">Select Course</option>
-          <?php
-            foreach($details as $user){
-          ?> 
-         <option value="<?php echo $user->course;?>"><?php echo $user->course;?></option>
-          <?php
-               }
-          ?>
-        </select>
-    
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
- <span class="input-group-text" id="inputGroup-sizing-default">Semester</span>
-  </div>
-    <select class="form-control" id="sem" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="semester"  reqired>
-        <option value="">Select semester</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-         <option value="5">5</option>
-         <option value="6">6</option>
-  </select>
-    
-</div>
          
 
-               <span class="input-group-btn">
-                         <button type="button" id="myBtn">Search</button>
-    </span>
                    
     </div> 
     <div class="col-sm">
@@ -121,7 +86,21 @@
     <br>
     <div class="row">
         <div  id="result"class="col-sm">
-            
+        <?php 
+         $output='';
+        if(!empty($info) && count($info)>0 && $info[0]->present>0) {
+            $info=$info[0];
+            $average_attendence=$info->present/($info->present+$info->absent)*100;
+                 $output= '<p style="color:black;font-size: 20px;">Your Attendence percentage for this semester is <span style="color:blue">' .round($average_attendence,2) . '%</span></p></td>';
+                 
+             }
+           else{
+               $output='<p style="color:black;font-size: 20px;">Your attendence percentage is not currently avaliable</p>';
+                       
+           }
+        
+        echo $output;              
+           ?>
         </div>
     </div>
  </div>

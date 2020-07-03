@@ -29,8 +29,13 @@ public function completed_teacher_profile()
 }
    public function internal_mark($n)
 	{
+        if($n['docId'])
+        {
+            $this->db->where('docId',$n['docId']);
+            $this->db->update("inmark",$n);
+        }
+        else
         $this->db->insert("inmark",$n);
-       
         if($this->db->affected_rows()>0)
         {
             return true;
@@ -52,68 +57,48 @@ public function completed_teacher_profile()
     {
         
     }
-   public function get_students($course, $sem)
-           
- { 
-       $this->db->where('semester', $sem);
+    public function get_students($course, $sem)
+    { 
+        $this->db->where('sem', $sem);
         $this->db->where('course', $course);
-        $query = $this->db->get('attendence_id');
-        if ($query->num_rows() != 0) {
-            $this->db->where('course', $course);
-            $details = $this->db->get('students');
-            return $details->result();
-        } else {
-            $data = array('course' => $course, 'semester' => $sem);
-            $this->db->insert("attendence_id", $data);
-            if ($this->db->affected_rows() > 0) {
-                $this->db->where('course', $course);
-                $details = $this->db->get('students');
-                return $details->result();
-            }}
-   
+        $this->db->where('yearofpass is   NULL' );
+        $this->db->where('yearofdrop is  NULL');
+        $query = $this->db->get('students');
+        return $query->result();
+    }
+    public function get_students_attendance($course, $sem,$period,$date=null)
+    { 
         
-}
-public function add_attendence($period,$present,$absent)
+        $this->db->select('attendence.*,students.name as name,students.course,students.adno as adno');
+        $this->db->join("attendence","attendence.adno=students.adno and attendence.atcourse=students.course and attendence.atsem=$sem and attendence.atperiod =$period and attendence.date='$date'","left outer");
+        $this->db->where('sem', $sem);
+        $this->db->where('course', $course);
+        $this->db->where('yearofpass is  NULL' );
+        $this->db->where('yearofdrop is  NULL');
+        $query = $this->db->get('students');
+        return $query->result();
+    }
+public function add_attendence($list,$period,$date,$status,$subject)
 {
-    $stud_prsnt=explode(',', $present);
-
-    $this->db->select('name');
-    $this->db->where_in('adno', $stud_prsnt);
-    $query = $this->db->get('students');
-    $res = $query->result();
-    $n=count($stud_prsnt);
-  
-   $this->db->order_by('Id','desc');
-   $this->db->limit(1);
-   $id = $this->db->get('attendence_id')-> row()->Id;
-  
-   $i=0;
-foreach($res as $r){
-   
-   $data=array("adno"=>$stud_prsnt[$i],"name"=>$r->name,"date"=>date("Y-m-d"),"status"=>"present","period"=>$period,"Id"=>$id); 
-   $this->db->insert("attendence",$data);
-   if($i<$n){
-       $i++;
-}}
-   $stud_absnt=explode(',', $absent);
-   $this->db->select('name');
-    $this->db->where_in('adno', $stud_absnt);
-    $query1= $this->db->get('students');
-    $res1 = $query1->result();
-    $v=count($stud_absnt);
-    $j=0;
-   foreach($res1 as $r1){
-   
-   $data=array("adno"=>$stud_absnt[$j],"name"=>$r1->name,"date"=>date("Y-m-d"),"status"=>"absent","period"=>$period,"Id"=>$id); 
-   $this->db->insert("attendence",$data);
-   if($j<$v){
-       $j++;
-}}
-
- if($this->db->affected_rows()>0)
-        {
-            return true;
-        }
+    $stdList=implode(",",$list);
+    $tid=$this->session->userdata('tid');
+    $query = $this->db->query("insert into attendence (atcourse,atsem,atperiod,attakenby,adno,date,status,atsub)
+    select course,sem,$period,$tid,adno,'$date','$status','$subject'
+    from students
+    where adno in($stdList)
+    ");
+}
+public function update_attendence($list,$status)
+{
+    
+    $tid=$this->session->userdata('tid');
+    $stdList=implode(",",$list);
+    $this->db->set('status',$status);
+    
+    $this->db->set('attakenby',$tid);
+    $this->db->where_in('sno',$stdList);
+    $this->db->update('attendence');
+    return true;
 }
 //Not using this method
 public function get_timetable(){
@@ -124,10 +109,9 @@ return $details->result();
 }
 public function get_attendence($course,$sem){
     $adno=$this->session->userdata('adno');
-    
-     $this->db->where('course',$course);
-   $this->db->where('semester',$sem);
-   $query=  $this->db->get('attendence_id');
+    $this->db->where('course',$course);
+    $this->db->where('semester',$sem);
+    $query=  $this->db->get('attendence_id');
    
    $c=count($query->result());
       if($c==""){

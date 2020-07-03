@@ -73,57 +73,44 @@
 
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm">
-                <h3>Assignment</h3>
 
-
-<div class="input-group mb-3"> 
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course</span>
-  </div>
-    <select class="form-control"  id="course"aria-label="Default" aria-describedby="inputGroup-sizing-default" name="course"  reqired>
-        <option value="">Select Course</option>
-          <?php
-            foreach($details as $user){
-          ?> 
-         <option value="<?php echo $user->course;?>"><?php echo $user->course;?></option>
-          <?php
-               }
-          ?>
-        </select>
-    
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
- <span class="input-group-text" id="inputGroup-sizing-default">Semester</span>
-  </div>
-    <select class="form-control" id="sem" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="semester"  reqired>
-        <option value="">Select semester</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-         <option value="5">5</option>
-         <option value="6">6</option>
-  </select>
-    
-</div>
-          
-
-               <span class="input-group-btn">
-                         <button type="button" id="myBtn">Search</button>
-    </span>
-                   
-    </div> 
-    <div class="col-sm">
-      
-    </div>
-  
-  </div> <br>
     <div class="row">
         <div  id="result"class="col-sm">
+        <?php
+        $output='
+            <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                        <tr>
+                        <th>Subject</th>
+                        <th>Topic</th>
+                       
+                        <th >Date of post</th>
+                        <th >Date Of Submission</th>
+                        
+                     </tr>'
+                  ;
+             if(!empty($info)) {
+                 foreach($info as $row)
+                 {
+                     $output.='<tr> <td>' . $row->subject. '</td>
+                                                <td>' . $row->assignment . '</td>
+                                                  
+                                                <td>' . $row->date_post . '</td>
+                                                                              
+                                                <td >' . $row->date_submit . '</td>';
+
+
+
+                $output.= '</tr>';
+            } }
+           else{
+               $output.='<tr><td colspan=9>No data found</td></tr>';
+                       
+           }
+           $output.="</table></div>";
             
+    
+           echo $output; ?>
         </div>
     </div>
 

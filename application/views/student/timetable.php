@@ -78,42 +78,6 @@
                 <h3>TimeTable</h3>
 
 
-<div class="input-group mb-3"> 
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroup-sizing-default">Course</span>
-  </div>
-    <select class="form-control"  id="course"aria-label="Default" aria-describedby="inputGroup-sizing-default" name="course"  reqired>
-        <option value="">Select Course</option>
-          <?php
-            foreach($details as $user){
-          ?> 
-         <option value="<?php echo $user->course;?>"><?php echo $user->course;?></option>
-          <?php
-               }
-          ?>
-        </select>
-    
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
- <span class="input-group-text" id="inputGroup-sizing-default">Semester</span>
-  </div>
-    <select class="form-control" id="sem" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="semester"  reqired>
-        <option value="">Select semester</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-         <option value="5">5</option>
-         <option value="6">6</option>
-  </select>
-    
-</div>
-         
-
-               <span class="input-group-btn">
-                         <button type="button" id="myBtn">Search</button>
-    </span>
                    
     </div> 
     <div class="col-sm">
@@ -123,7 +87,42 @@
   </div><br>
     <div class="row">
         <div  id="result"class="col-sm">
-            
+        <h3 style="color:blue" >Your current time table</h3> 
+            <table class="table table-bordered table-striped">
+                        <tr>
+                        <th>#</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th >Friday</th>
+                       
+                        
+                     </tr>
+                 <?php     if(!empty($table)) {
+             
+                for ($i=1; $i < 6; $i++) 
+                 {
+                     echo'<tr><td>'.$i.'</td> ';
+                     for ($j=1; $j < 6; $j++) { 
+                         # code...
+                    
+                     echo'<td>' ;
+                      echo(isset($table[$i][$j]))?$table[$i][$j]:'Free' ;
+                      echo '</td>
+                                              ';
+
+
+
+                                            }
+                                            echo '</tr>';
+             
+            } }
+           else{
+               echo'<tr><td colspan=9>TimeTable not set</td></tr>';
+                       
+           } ?>
+           </table>
         </div>
     </div>
 

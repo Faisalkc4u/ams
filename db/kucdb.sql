@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2020 at 07:13 PM
+-- Generation Time: Jul 03, 2020 at 01:34 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.14
 
@@ -45,7 +45,9 @@ CREATE TABLE `assignment` (
 INSERT INTO `assignment` (`course`, `semester`, `subject`, `assignment`, `date_post`, `date_submit`, `id`) VALUES
 ('Mba', '2', 'math', 'rr', '20-04-10', '2020-04-22', 1),
 ('MA', '2', 'Data Science', 'Cloud Computing', '2020-05-08', '2020-05-13', 2),
-('MSc', '6', 'fa', 'fa', '2020-06-27', '2019-07-26', 3);
+('MSc', '6', 'fa', 'fa', '2020-06-27', '2019-07-26', 3),
+('MCA(R)', '1', 'Project', 'fa', '2020-07-03', '2019-06-02', 4),
+('0', '0', '0', '0', '2020-07-03', '0', 5);
 
 -- --------------------------------------------------------
 
@@ -70,10 +72,23 @@ CREATE TABLE `attendence` (
 --
 
 INSERT INTO `attendence` (`sno`, `atcourse`, `atsem`, `atperiod`, `atsub`, `attakenby`, `adno`, `date`, `status`) VALUES
-(80, 'MCA(LE)', 1, 1, 'MCA20', 9, '44', '2020-09-02', 'present'),
+(80, 'MCA(R)', 1, 1, 'MCA20', 9, '2', '2020-09-03', 'present'),
 (81, 'MCA(LE)', 1, 2, 'MCA20', NULL, '44', '2020-06-19', 'present'),
 (82, 'MCA(LE)', 1, 1, 'MCA20', NULL, '44', '2020-06-19', 'absent'),
-(85, 'MCA(LE)', 1, 1, 'MCA20', NULL, '44', '2020-06-30', 'present');
+(85, 'MCA(LE)', 1, 1, 'MCA20', NULL, '44', '2020-06-30', 'present'),
+(95, 'MCA(R)', 1, 1, NULL, 9, '2', '0000-00-00', 'present'),
+(96, 'MCA(R)', 1, 1, NULL, 9, '3', '0000-00-00', 'present'),
+(98, 'MCA(R)', 1, 1, NULL, 9, '2', '2020-06-01', 'present'),
+(99, 'MCA(R)', 1, 1, NULL, 9, '3', '2020-06-01', 'present'),
+(101, 'MCA(R)', 1, 1, NULL, 0, '2', '2020-06-02', 'Absent'),
+(102, 'MCA(R)', 1, 1, NULL, 0, '3', '2020-06-02', 'Absent'),
+(104, 'MCA(R)', 1, 1, NULL, 9, '2', '2020-06-02', 'present'),
+(105, 'MCA(R)', 1, 1, NULL, 9, '3', '2020-06-02', 'present'),
+(107, 'MCA(R)', 1, 1, NULL, 9, '2', '2020-06-03', 'Absent'),
+(108, 'MCA(R)', 1, 1, NULL, 9, '3', '2020-06-03', 'Present'),
+(110, 'MCA(R)', 1, 1, 'MCA1C01', 9, '2', '2020-06-05', 'Present'),
+(111, 'MCA(R)', 1, 1, 'MCA1C01', 9, '3', '2020-06-05', 'Present'),
+(113, 'MCA(R)', 6, 1, 'MCA2C01', 9, '54', '2020-07-03', 'Present');
 
 -- --------------------------------------------------------
 
@@ -115,7 +130,7 @@ CREATE TABLE `inmark` (
   `final` int(11) NOT NULL,
   `assignment` int(11) NOT NULL,
   `seminar` int(11) NOT NULL,
-  `total` int(11) NOT NULL,
+  `total` float(8,2) NOT NULL,
   `min_marks` varchar(255) DEFAULT NULL,
   `max_mark` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -125,8 +140,7 @@ CREATE TABLE `inmark` (
 --
 
 INSERT INTO `inmark` (`docId`, `regNo`, `course`, `semester`, `subject`, `firstin`, `secondin`, `thirdin`, `final`, `assignment`, `seminar`, `total`, `min_marks`, `max_mark`) VALUES
-(1, '105', 'MCA(R)', '6', 'rff', 2, 2, 0, 0, 2, 2, 2, '2', '2'),
-(2, '133', 'Msc', '1', 'rff', 33, 33, 0, 0, 33, 33, 22, '33', '33');
+(2, '54', 'MCA(R)', '6', 'MCA2C01', 25, 25, 25, 0, 80, 100, 205.00, '15', '25');
 
 -- --------------------------------------------------------
 
@@ -247,8 +261,8 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`sid`, `adno`, `name`, `regno`, `dob`, `gender`, `address`, `district`, `nationality`, `phone`, `email`, `aadharno`, `religion`, `caste`, `category`, `guardname`, `gphone`, `annualincome`, `sslcmark`, `plustwo`, `degreesub`, `degreemark`, `university`, `yearofpass`, `yearofdrop`, `pgsub`, `pgmark`, `pguni`, `net`, `mphilareaspec`, `mphilmark`, `phdareaspec`, `dateofjoin`, `course`, `mode`, `guid`, `sem`, `duration`, `status`, `type`) VALUES
-(2, 2, 'njnj', '', '1991-01-31', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Christian', 'RC', 'SC/ST', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 4, '', 'incomplete', 'regular'),
-(3, 3, 'ghgh', '', '2020-03-16', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Christian', 'Latin', 'General', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 4, '', 'incomplete', 'regular'),
+(2, 2, 'njnj', '', '1991-01-31', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Christian', 'RC', 'SC/ST', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 1, '', 'incomplete', 'regular'),
+(3, 3, 'ghgh', '', '2020-03-16', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Christian', 'Latin', 'General', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 1, '', 'incomplete', 'regular'),
 (4, 4, 'Athulya ', '', '1997-11-10', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Hindu', 'Saliya', 'OEC', '', '', '', '', '', '', '', '', '2020', NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 6, '', 'incomplete', 'regular'),
 (5, 5, 'athu', '', '1997-11-10', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Hindu', 'Saliya', 'OEC', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '', 'MCA(R)', NULL, NULL, 4, '', 'incomplete', 'regular'),
 (6, 6, 'ghu', '', '2020-03-09', 'Female', '', '', '', '920722022', 'athuprem1997@gmail.com', '', 'Christian', 'Latin', 'OBC', '', '', '', '', '', '', '', '', '2020', NULL, '', '', '', '', '', '', '', '', 'MCA(LE)', NULL, NULL, 4, '', 'incomplete', NULL),
@@ -278,7 +292,7 @@ INSERT INTO `students` (`sid`, `adno`, `name`, `regno`, `dob`, `gender`, `addres
 (42, 42, 'fffffff', '', '2019-05-25', 'Female', '', '', '', '9876543213', 'faisalkcfaisy@ff.c', '', 'Hindu', 'Bilava', 'OBC', '', '', '', '', '', '', '', '', '2020', NULL, '', '', '', '', '', '', '', '2019-05-24', 'MCA(LE)', NULL, NULL, 4, '', 'incomplete', 'research'),
 (43, 43, 'faisal', '', '2020-01-01', 'Male', '', '', '', '9874563210', 'faisalkc4u@gmail.com', '', 'Hindu', 'Bilava', 'General', '', '', '', '', '', '', '', '', '2020', NULL, '', '', '', '', '', '', '', '2019-05-25', 'MCA(LE)', NULL, NULL, 4, '', 'incomplete', 'research'),
 (44, 44, 'Research Student', '', '2020-01-01', 'Male', '', '', '', '123456789', 'faisalkc4u@gmail.com', '', 'Hindu', 'Bilava', 'General', '', '', '', '', '', '', '', '', '2020', NULL, '', '', '', '', '', '', '', '2019-05-25', 'MCA(LE)', 'CS', 0, 1, '', 'incomplete', 'research'),
-(45, 54, 'faisal', '', '2020-01-01', 'Male', 'Kerala', 'Kannur', 'Afganistan', '9744373369', 'faisalkc4u@gmail.com', '111', 'Hindu', 'Bilava', 'General', '111', '1111', '1111', '1111', '1', 'BCA', '22', '22', '2222', NULL, '', '', '', '', '', '', '', '2020-04-25', 'MCA(R)', 'CS', 12, 6, '', 'complete', 'research'),
+(45, 54, 'faisal', '', '2020-01-01', 'Male', 'Kerala', 'Kannur', 'Afganistan', '9744373369', 'faisalkc4u@gmail.com', '111', 'Hindu', 'Bilava', 'General', '111', '1111', '1111', '1111', '1', 'BCA', '22', '22', NULL, NULL, '', '', '', '', '', '', '', '2020-04-25', 'MCA(R)', 'CS', 12, 6, '', 'complete', 'research'),
 (46, 46, '0', '', '0', '0', '', '', '', '0', '0', '', '0', '0', '0', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '0', '0', NULL, NULL, 1, '', 'incomplete', 'research'),
 (47, 47, '0', '', '0', '0', '', '', '', '0', '0', '', '0', '0', '0', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '0', '0', NULL, NULL, 1, '', 'incomplete', 'research'),
 (48, 48, '0', '', '0', '0', '', '', '', '0', '0', '', '0', '0', '0', '', '', '', '', '', '', '', '', NULL, NULL, '', '', '', '', '', '', '', '0', '0', NULL, NULL, 1, '', 'incomplete', 'research');
@@ -302,7 +316,7 @@ CREATE TABLE `subject` (
 
 INSERT INTO `subject` (`subcode`, `subname`, `course`, `semester`) VALUES
 ('MCA1C01', 'Digital System and Introduction to Microprocessors', 'MCA(R)', '1'),
-('MCA2C01', 'Computer Organization', 'MCA(R)', '2');
+('MCA2C01', 'Computer Organization', 'MCA(R)', '6');
 
 -- --------------------------------------------------------
 
@@ -378,7 +392,7 @@ CREATE TABLE `timetable` (
 --
 
 INSERT INTO `timetable` (`table_id`, `course`, `semester`, `weekday`, `period`, `lecture`, `subject`) VALUES
-(1, 'MCA(R)', 1, 1, 1, NULL, 'Project'),
+(1, 'MCA(R)', 6, 1, 1, NULL, 'Project'),
 (2, 'MCA(R)', 1, 1, 2, NULL, 'CLoud'),
 (3, 'MCA(R)', 1, 2, 1, 9, 'Project'),
 (4, 'MCA(R)', 1, 4, 3, 9, 'Cloud'),
@@ -456,13 +470,13 @@ ALTER TABLE `timetable`
 -- AUTO_INCREMENT for table `assignment`
 --
 ALTER TABLE `assignment`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `attendence`
 --
 ALTER TABLE `attendence`
-  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT for table `inmark`

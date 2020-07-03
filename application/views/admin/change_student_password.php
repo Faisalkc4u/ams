@@ -159,17 +159,17 @@
                                                     <table border='0' width='480px' cellpadding='0' cellspacing='0' align='center'>
 <tr>
     <td align='center'>Admission No.</td>
-    <td><input type='text' name='studentid'></td>
+    <td><input type='text' name='studentid' required></td>
 </tr>
 <tr> <td>&nbsp;</td> </tr>
 <tr>
     <td align='center'>New Password</td>
-    <td><input type='password' name='newpass'></td>
+    <td><input type='password' name='newpass' required></td>
 </tr>
 <tr> <td>&nbsp;</td> </tr>
 <tr>
     <td align='center'>Confirm Password</td>
-    <td><input type='password' name='confirmpass'></td>
+    <td><input type='password' name='confirmpass' required></td>
 </tr>
 <tr> <td>&nbsp;</td> </tr>
 <tr>

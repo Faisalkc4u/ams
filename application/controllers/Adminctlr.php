@@ -437,17 +437,22 @@ class Adminctlr extends CI_Controller {
         $studentid=$this->input->post("studentid");
         $newpass=$this->input->post("newpass");
         $cnewpass=$this->input->post("confirmpass");
-        if(count( $newpass)>0&&  $newpass== $cnewpass)
+        if( $newpass== $cnewpass)
         {
             $this->load->model("adminmodel","",true);
             $r8=$this->adminmodel->change_stud_pass($studentid,$newpass);
             if($r8==true)
             {
-                if($this->input->post("email"))
-                {
-                    //send email notifications
-                    $user=$this->adminmodel->getStudentById($studentid);
-                    $this->sendEmail($user->email,'Password Reset: Login Detais','Please find the login details from below <br/> Email: '.$user->email.'<br/> Username: '.$this->input->post("studentid").' <br/> Password: '.$this->input->post("confirmpass"));
+                try {
+                    if($this->input->post("email"))
+                    {
+                        //send email notifications
+                        $user=$this->adminmodel->getStudentById($studentid);
+                        $user=$user[0];
+                        $this->sendEmail($user->email,'Password Reset: Login Detais','Please find the login details from below <br/> Email: '.$user->email.'<br/> Username: '.$this->input->post("studentid").' <br/> Password: '.$this->input->post("confirmpass"));
+                    }
+                } catch (\Throwable $th) {
+                   
                 }
                 $this->session->set_flashdata('Success','Password changed Successfully');
             }

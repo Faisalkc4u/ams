@@ -165,7 +165,8 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-color:#e0e0d1" >
+            <div class="single-welcome-slide bg-img" style="background-color:url" >
+            
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
                     <div class="container h-100">
@@ -179,7 +180,7 @@
                                     imparts students the knowledge to understands and engage 
                                     with the technological society in which they live and the skills that will lead to successful careers.”</p>
                                     <!--<a href="#" class="btn akame-btn" data-animation="fadeInUp" data-delay="700ms">About Us</a>-->
-                                </div>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -193,7 +194,7 @@
     <!-- Welcome Area End -->
 
     <!-- Footer Area Start -->
-    <footer class="footer-area section-padding-80-0" style="background-color: black">
+    <footer class="footer-area section-padding-50-0" style="background-color: #bf1d2c">
         <div class="container">
             <div class="row justify-content-between">
 
@@ -208,7 +209,7 @@
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                             <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
+<font color="white">Copyright &copy;<script></script></font><font size="4" color="white"> All rights reserved</font> <i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -218,11 +219,11 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
                 <div class="col-12 col-sm-6 col-md-4 col-xl-3">
                     <div class="single-footer-widget mb-80">
                         <!-- Widget Title -->
-                        <h5>Opening times</h5>
+                       <h5><font color="white"> Opening times</h5></font>
 
                         <!-- Open Times -->
                         <div class="open-time">
-                            <p>Monday: Friday: 9.30 to 4</p>
+                           <p> <font color="white">Monday: Friday: 9.30 to 4</p></font>
                             
                         </div>
 
@@ -241,13 +242,17 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
                     <div class="single-footer-widget mb-80">
 
                         <!-- Widget Title -->
-                        <h5 class="">Contact Us</h5>
+                        <h5 class=""><font color="white">Contact Us</h5></font>
 
                         <!-- Contact Address -->
                         <div class="contact-address">
-                            <p>Tel: (+12) 345 678 910</p>
-                            <p>E-mail: @gmail.com</p>
-                            <p>Address:</p>
+                            <p><font color="white">Tel: (+12) 345 678 910</p></font>
+                            <p><font color="white">E-mail: kusist@gmail.com</p></font>
+                            <p><font color="white">Address:
+                                <br>SIST 
+                                <br>Mangattuparamba Campus
+                                <br>Mangattuparamba 
+                            </p></font>
                         </div>
                     </div>
                 </div>

@@ -96,7 +96,7 @@
 <form action="" method="get">
   <div class="input-group mb-3"> 
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Student Regno</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">Student Admission No</span>
     </div>
       <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" name = "adno" value="<?php echo isset($student)?$student->adno:'' ?>"  required>
   <?php
@@ -105,7 +105,7 @@
     ?>
      <div class="input-group mb-3"> 
     <div class="input-group-prepend">
-      <span class="input-group-text" id="inputGroup-sizing-default">Student Regno</span>
+      <span class="input-group-text" id="inputGroup-sizing-default">Subjects</span>
     </div>
     <?php
    if(isset($student))

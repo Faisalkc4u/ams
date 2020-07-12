@@ -25,7 +25,7 @@ public function completed_teacher_profile()
 {
     $tid=$this->session->userdata('tid');
     $this->db->where('tid',$tid);
-    $this->db->update('teachers',['profile'=>'complete']);
+    $this->db->update('teachers',array('profile'=>'complete'));
 }
    public function internal_mark($n)
 	{

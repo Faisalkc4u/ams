@@ -1,5 +1,5 @@
 <div class="sidebar-header">
-                <a href="<?php echo base_url(); ?>assets/index.html"><img class="main-logo" src="<?php echo base_url(); ?>assets/img/logo/sist.jpg" alt="" /></a>
+                <a href="<?php echo base_url(); ?>assets/index.html"><img class="main-logo" src="<?php echo base_url(); ?>assets/img/logo/itsist.jpg" alt="" /></a>
                 <strong><img src="<?php echo base_url(); ?>assets/img/logo/sist.jpg" alt="" /></strong>
             </div>
 <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -42,7 +42,7 @@
                                 <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/drop_out"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Drop Out List</span></a></li>
                             </ul>
                         </li>
-                        
+                        <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/course_completion"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Marking Attendance</span></a></li>
                          <li><a title="" href="<?php echo base_url()?>index.php/Adminctlr/course_completion"><i class="" aria-hidden="true"></i> <span class="mini-sub-pro">Course Completion</span></a></li>
                         <li>
                             <a class="has-arrow" href="index.html">

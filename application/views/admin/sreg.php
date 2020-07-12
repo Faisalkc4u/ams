@@ -193,8 +193,13 @@
                                                         <tr><td>Semester</td>
                                                             <td><select name="sem"  required>
                                                                     <option value="">Select Semster</option>
-                                                                    <option value="4 semster">4 semester</option>
-                                                                    <option value="6 semester">6 semester</option>
+                                                                    <option value="Semster 1"> Semester 1</option>
+                                                                    <option value="Semster 2"> Semester 2</option>
+                                                                    <option value="Semster 3"> Semester 3</option>
+                                                                    <option value="Semster 4"> Semester 4</option>
+                                                                    <option value="Semster 5"> Semester 5</option>
+                                                                    <option value="Semster 6"> Semester 6</option>
+                                                                   
 
                                                                 </select></td>
                                                         </tr>

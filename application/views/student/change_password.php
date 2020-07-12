@@ -111,18 +111,15 @@ echo form_open_multipart("studentctlr/send_email");
   </div>
   <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "email" name = "from" required >
 </div>
- <div class="input-group mb-3">
+
+<div class="input-group mb-3">
   <div class="input-group-prepend">
- <span class="input-group-text" id="inputGroup-sizing-default">Subject</span>
+ <span class="input-group-text" id="inputGroup-sizing-default">Reason</span>
   </div>
-  <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" name = "subject" required >
+  <input class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type = "text" name = "reason" required >
 </div>
- <div class="input-group mb-3">
-  <div class="input-group-prepend">
- <span class="input-group-text" id="inputGroup-sizing-default">Message</span>
-  </div>
-     <textarea class="form-control" aria-label="With textarea" name="message" required></textarea>
-</div>
+
+<div>
      <input type = "submit" value = "SEND MAIL">
     
     </div>

@@ -124,8 +124,11 @@ echo form_open("studentctlr/apply_leave");
 <td><br><input type="date" name="enddate"  required></td>
 <tr><td><br>Number of Days Absent</td>
 <td><br><input type="text" name="nos"  required></td></tr>
+<tr><td><br>Reason</td>
+<td><br><input type="text" name="reason" required></td></tr>
+<tr><td><br>Send To</td>
+<td><br><input type="email" name="sendto" required></td></tr>
 </div>
-<br>
 <tr><td><br><input type="submit" value="Apply" name="a"></td></tr></table>
 <?php echo form_close();
 ?>

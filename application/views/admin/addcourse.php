@@ -392,6 +392,7 @@ echo form_open_multipart("Adminctlr/courseadd");
                 </div>
             </div>
         </div>
+        <br><br><br>
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">

@@ -97,13 +97,13 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Home</a>
+                                                <li class="nav-item"><a href="#" class="nav-link"></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">About</a>
+                                                <li class="nav-item"><a href="#" class="nav-link"></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Facilities</a>
+                                                <li class="nav-item"><a href="#" class="nav-link"></a>
                                                 </li>
-                                                <li class="nav-item"><a href="#" class="nav-link">Gallery</a>
+                                                <li class="nav-item"><a href="#" class="nav-link"></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -180,97 +180,19 @@
     </td>
 </tr>
 
-<tr> <td>&nbsp;</td><td><span class="input-group-btn">
-     <button  class="btn btn-primary"type="button" id="myBtn">Submit</button>
+<tr> <td><br><br>&nbsp;</td><td><span class="input-group-btn">
+     <br><button  class="btn btn-primary"type="button" id="myBtn">Submit</button>
          </span></td></tr>
 
                                                     </table><br>
-                                                    <div style= "margin-top:1px" id="result">
-</div>
-                                                </div>
-                                            </div>
-                                               </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="text-center mg-b-pro-edt custom-pro-edt-ds">
-                                                    <!--<button type="button" class="btn btn-primary waves-effect waves-light m-r-10">Save
-														</button>
-                                                    <button type="button" class="btn btn-warning waves-effect waves-light">Discard
-                                                        </button>--><br>
-                                                       
-                                                </div>
-                                            </div>
-                                        </div>
-                                       
-                                    </div>
-                                    <div class="product-tab-list tab-pane fade" id="reviews">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="review-content-section">
-                                                    <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="pro-edt-img">
-                                                                <img src="img/new-product/5-small.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-8">
-                                                            <div class="row">
-                                                                <div class="col-lg-12">
-                                                                    <div class="product-edt-pix-wrap">
-                                                                        <div class="input-group">
-                                                                            <span class="input-group-addon">TT</span>
-                                                                            <input type="text" class="form-control" placeholder="Label Name">
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-radio">
-                                                                                    <form>
-                                                                                        <div class="radio radiofill">
-                                                                                            <label>
-																									<input type="radio" name="radio"><i class="helper"></i>Largest Image
-																								</label>
-                                                                                        </div>
-                                                                                        <div class="radio radiofill">
-                                                                                            <label>
-																									<input type="radio" name="radio"><i class="helper"></i>Medium Image
-																								</label>
-                                                                                        </div>
-                                                                                        <div class="radio radiofill">
-                                                                                            <label>
-																									<input type="radio" name="radio"><i class="helper"></i>Small Image
-																								</label>
-                                                                                        </div>
-                                                                                    </form>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-6">
-                                                                                <div class="product-edt-remove">
-                                                                                    <button type="button" class="btn btn-danger waves-effect waves-light">Remove
-																							<i class="fa fa-times" aria-hidden="true"></i>
-																						</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   
-                                </div>
+                                     
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br><br>  <br><br>  <br><br>  <br><br>  <br><br>  <br>  <br><br>  <br><br>  <br><br>  <br><br>  <br><br>
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">

@@ -129,7 +129,7 @@
                        
                                 <ul id="myTab3" class="tab-review-design">
                                     <!--<li class="active"><a href="Add Student.html"><i class="" aria-hidden=""></i>View Registered Stuents</a></li>-->
-                                     <h4>View Registered Teacher</h4>
+                                     <h4><br>View Registered Teacher</h4>
                                 <div id="" class="">
                               
                                         <div class="">
@@ -230,7 +230,7 @@
                                         <?php echo form_close();
 ?>
       
-     <br><br><br><br><br><br> <div class="footer-copyright-area">
+     <br><br><br><br><br><br><br><br><br> <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">

@@ -140,7 +140,7 @@
                                           <!-- Static Table Start -->
         <div class="data-table-area mg-tb-15">
             
-                                    <h1>List of Dropped Out Students</h1>
+                                    <h1>List of Drop Out Students</h1>
                                 </div>
                             </div>
                             
@@ -204,7 +204,7 @@
                                         
 ?>
       
-     <br><br><br><br><br><br> <div class="footer-copyright-area">
+     <br><br><br><br><br><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br> <br><br> <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">

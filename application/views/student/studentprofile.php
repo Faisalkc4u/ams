@@ -92,9 +92,9 @@ echo form_open("studentctlr/update_studprofile");
 foreach($details as $user) 
  ?>                                                   
 
-
+<h2><font face="arialblack" >Complete Your Profile...</font></h2>
 <table>
- <h2><font face="arialblack" >Complete Your Profile...</font></h2>
+ 
  <tr><td><br>Admisssion Number</td>
  <td style="width:50%"><br><input type="text"  disabled name="adno" value="<?php echo $user->adno;?>"></td>
  </tr>

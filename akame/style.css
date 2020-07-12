@@ -460,7 +460,7 @@ input:focus {
   .header-area .top-header-area {
     position: relative;
     z-index: 1;
-    background-color: #252525;
+    background-color: #fff;
     width: 100%;
     height: 50px; }
     @media only screen and (max-width: 767px) {

@@ -97,8 +97,7 @@ foreach($details as $user){
  ?>
 
 <table>
- <div class="input-group mg-b-pro-edt">
- <tr><td><br>Teacher ID</td>
+ <tr><td>Teacher ID</td>
  <td><br><input type="text"  disabled value="<?php echo $user->tid;?>" ></td>
  </tr>
  <tr><td><br>Name</td>
@@ -227,7 +226,7 @@ foreach($details as $user){
 <td><br><input type="textarea" name="oquali"></td>
 </tr>
 <tr><td><br>NET/JRF Qualification</td>
-<td><br><input type="text" name="net" value="<?php echo $user->;net?>"disabled></td>
+<td><br><input type="text" name="net" value="<?php echo $user->net; ?>"disabled></td>
 </tr>
 <div class="input-group mg-b-pro-edt">
 <tr><td><br>Experience</td>

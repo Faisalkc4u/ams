@@ -32,13 +32,13 @@ class teacherctlr extends CI_Controller {
     public function time_table(){
         
         $tid=$this->session->userdata('tid');
-        $timetable=[];
+        $timetable=array();
         $this->load->model("adminmodel","",true);
         $result=$this->adminmodel->get_teacher_timetable($tid);
         foreach ($result as $value) {
             $timetable[$value->weekday][$value->period]=$value->course.'-'.$value->semester.'-'.$value->subject;
             }
-        $this->load->view('teacher/timetable',['table'=>$timetable]);
+        $this->load->view('teacher/timetable',array('table'=>$timetable));
     }
        public function assignment(){
         $this->load->model("adminmodel","",true);

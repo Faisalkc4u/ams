@@ -149,16 +149,16 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(http://www.kannuruniversity.ac.in/images/slides/slide7.jpg);">
                 <!-- Welcome Content -->
-                <div class="welcome-content h-100" style="background-color: #e6f2ff">
+                <div class="welcome-content h-100">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-9 col-lg-6">
-                                <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">SIST <br> </h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“School of Information Science & Technology, Department of 
+                                <div class="welcome-text" >
+                                    <h2 data-animation="fadeInUp" data-delay="100ms" style="color:white !important" style="color:white !important"><br>SIST <br> </h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms" style="color:white !important; font-size:20px;">“School of Information Science & Technology, Department of 
                                     Information Technology, Mangattuparamba, Kannur University Campus. Department of Information Technology 
                                     imparts students the knowledge to understands and engage 
                                     with the technological society in which they live and the skills that will lead to successful careers.”</p>
@@ -171,14 +171,14 @@
             </div>
 
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-color: #e6f2ff" style="background-image: url(img/bg-img/16.jpg);">
+            <!--<div class="single-welcome-slide bg-img" style="background-color: " style="background-image: url(img/bg-img/16.jpg);">-->
                 <!-- Welcome Content -->
-                <div class="welcome-content h-100" >
+                <!--<div class="welcome-content h-100" >
                     <div class="container h-100">
-                        <div class="row h-100 align-items-center" style="background-color: #e6f2ff">
+                        <div class="row h-100 align-items-center" style="background-color: #e6f2ff">-->
                             <!-- Welcome Text -->
-                            <div class="col-12 col-md-9 col-lg-6">
-                                <div class="welcome-text">
+                            <!--<div class="col-12 col-md-9 col-lg-6">
+                                <div class="welcome-text">-->
                                     <!--<h2 data-animation="fadeInUp" data-delay="100ms"><br> </h2>
                                     <p data-animation="fadeInUp" data-delay="400ms">“Discover your own style. Don't try to repeat what has already been written - have the courage to do your own thing and don't be afraid to do something different.”</p>
                                     <a href="#" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">About Us</a>-->

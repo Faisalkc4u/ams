@@ -113,7 +113,7 @@ class Adminctlr extends CI_Controller {
        {
            $this->session->set_flashdata('Failed','Phone number is required');
            $validate=false;
-       }elseif(strlen($this->input->post("phone")!=10))
+       }elseif((strlen($this->input->post("phone"))!=10))
        {
            $this->session->set_flashdata('Failed','Phone number must have 10 digits');
            $validate=false;
@@ -155,6 +155,8 @@ class Adminctlr extends CI_Controller {
             $this->load->view('admin/home');
           
         }
+else{
+
 
         $this->load->model("adminmodel","",true);
         $r2=$this->adminmodel->login($uname,$pwd);
@@ -165,23 +167,23 @@ class Adminctlr extends CI_Controller {
             
                 if($row->Type=="admin")
                 {
-                    $this->load->view('admin/home');
+                   $this->load->view('admin/home');
                    
                 }
         
         
-               if($row->Type=="Student")
+               elseif($row->Type=="Student")
                 {   $this->session->set_userdata('type',$row->Type); 
                     $this->session->set_userdata('adno',$row->uname); 
                     $this->load->view('student/studhome');
                 }
-                 if($row->Type=="Research_Student")
+                elseif($row->Type=="Research_Student")
                 {   
                     $this->session->set_userdata('types',$row->Type);
                      $this->session->set_userdata('adno',$row->uname); 
                     $this->load->view('research_scholors/home');
                 }
-               if($row->Type=="Teacher")
+                elseif($row->Type=="Teacher")
                 {   
                     $this->session->set_userdata('tid',$row->uname); 
                    $this->load->view('teacher/teacherhome');
@@ -200,6 +202,7 @@ class Adminctlr extends CI_Controller {
             
         }
         }
+    }
        // if($r2==true)
         //{
             

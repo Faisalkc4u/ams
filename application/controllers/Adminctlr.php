@@ -153,6 +153,7 @@ class Adminctlr extends CI_Controller {
         $pwd=$this->input->post("password");
          if($uname==""&& $pwd==""){
             $this->load->view('admin/home');
+          
         }
 
         $this->load->model("adminmodel","",true);
@@ -165,6 +166,7 @@ class Adminctlr extends CI_Controller {
                 if($row->Type=="admin")
                 {
                     $this->load->view('admin/home');
+                   
                 }
         
         

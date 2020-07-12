@@ -153,9 +153,9 @@
 
     <!-- Welcome Area Start -->
     <section class="welcome-area">
-        <div class="welcome-slides owl-carousel">
+        <div class="">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(img/bg-img/16.jpg);">
+            <div class="single-welcome-slide bg-img" style="background-image: url(http://www.kannuruniversity.ac.in/images/slides/slide7.jpg44;">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100" style="background-color:#ffe6ff">
                     <div class="container h-100">
@@ -176,24 +176,6 @@
                 </div>
             </div>
 
-            <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-color:#ffe6ff" style="background-image: url(img/bg-img/16.jpg);">
-                <!-- Welcome Content -->
-                <div class="welcome-content h-100">
-                    <div class="container h-100">
-                        <div class="row h-100 align-items-center" style="background-color:#ffe6ff">
-                            <!-- Welcome Text -->
-                            <div class="col-12 col-md-9 col-lg-6">
-                                <div class="welcome-text">
-                                    <!--<h2 data-animation="fadeInUp" data-delay="100ms"><br> </h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“Discover your own style. Don't try to repeat what has already been written - have the courage to do your own thing and don't be afraid to do something different.”</p>
-                                    <a href="#" class="btn akame-btn active" data-animation="fadeInUp" data-delay="700ms">About Us</a>-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!-- Welcome Area End -->

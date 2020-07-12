@@ -165,7 +165,8 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-color:url" >
+            <div class="single-welcome-slide bg-img" style="background-image:url(http://www.kannuruniversity.ac.in/images/slides/thavakkaracampus.jpg)" >
+            <!-- change this image later -->
             
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100">
@@ -174,8 +175,8 @@
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-9 col-lg-6">
                                 <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms">SIST <br> </h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“School of Information Science & Technology, Department of 
+                                    <h2 data-animation="fadeInUp" data-delay="100ms"  style="color:white;">SIST <br> </h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms"  style="color:white;">“School of Information Science & Technology, Department of 
                                     Information Technology, Mangattuparamba, Kannur University Campus. Department of Information Technology 
                                     imparts students the knowledge to understands and engage 
                                     with the technological society in which they live and the skills that will lead to successful careers.”</p>

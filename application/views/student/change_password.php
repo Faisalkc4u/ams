@@ -133,6 +133,8 @@ echo form_open_multipart("studentctlr/send_email");
 <?php  echo form_close();
 ?>
 
+</div>
+
  
 
 <!-- Footer Area Start -->
@@ -195,7 +197,6 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
                     </div>
                 </div>
 
-            </div>
         </div>
     </footer>
     <!-- Footer Area End -->

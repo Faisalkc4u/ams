@@ -19,7 +19,7 @@
 /*----------------------------------------*/
 /*  1.  Theme default CSS
 /*----------------------------------------*/
-html, body {height: 100%; font-family: 'Play', sans-serif;font-weight:400;background:#f5f5f5;}
+html, body {height: 100%; font-family: 'Play', sans-serif;font-weight:400;background:#fff;}
 .floatleft {float:left}
 .floatright {float:right}
 .alignleft {float:left;margin-right:15px;margin-bottom: 15px}
@@ -238,7 +238,7 @@ body {}
 }
 .footer-copyright-area {
     background: -webkit-linear-gradient(178deg, #e40a28 0%, #c3171f 100%);
-    background: linear-gradient(178deg, #dc0f2c 0%, #d81c36 100%);
+    background: linear-gradient(178deg, #c13734 0%, #c13734  100%);
     padding: 20px 0px;
     text-align: center;
 }
@@ -829,8 +829,8 @@ ul.breadcome-menu li a{
     color:#fff;
 }
 .header-advance-area{
-	background: -webkit-linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
-    background: linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
+	background: -webkit-linear-gradient(178deg, #c13734 0%, #c13734  100%);
+    background: linear-gradient(178deg, #c13734 0%, #c13734  100%);
 }
 .analysis-progrebar-ctn .progress {
     height: 5px;
@@ -1023,8 +1023,8 @@ ul.two-part-sp li{
 }
 .header-top-area {
     position: fixed;
-    background: -webkit-linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
-    background: linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
+    background: -webkit-linear-gradient(178deg, #c13734 0%, #c13734  100%);
+    background: linear-gradient(178deg, #c13734 0%, #c13734  100%);
     z-index: 99;
     left: 200px;
     right: 0;
@@ -1044,8 +1044,8 @@ ul.two-part-sp li{
     position: absolute;
     top: 14px;
     right: 50px;
-    background: -webkit-linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
-    background: linear-gradient(178deg, #03e1b8 0%, #07d0b1 100%);
+    background: -webkit-linear-gradient(178deg, #c13734 0%, #c13734  100%);
+    background: linear-gradient(178deg, #c13734 0%, #c13734  100%);
     padding: 6px 20px;
     color: #fff;
     border-radius: 4px;
@@ -1112,7 +1112,7 @@ ul.two-part-sp li{
     font-size: 14px;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,.12);
-    background: #f5f5f5;
+    background: #fff;
 }
 button.pd-setting-ed {
     display: inline-block;
@@ -1151,7 +1151,7 @@ ul.tab-custon-design li, ul.tab-review-design li {
 	transition:all .4s ease 0s;
 }
 ul.tab-custon-design li.active a, ul.tab-review-design li.active a {
-    color: #03e1b8 !important;
+    color: #c13734 !important;
 }
 ul.tab-custon-design li a, ul.tab-custon-design li a:hover, ul.tab-custon-design li a:focus, ul.tab-review-design li a, ul.tab-review-design li a:hover, ul.tab-review-design li a:focus {
     font-size: 18px;
@@ -1383,7 +1383,7 @@ ul#single-product-tab li{
   line-height: 40px;
   text-align: center;
   width: 150px;
-  background: #03e1b8 none repeat scroll 0 0;
+  background: #c13734 none repeat scroll 0 0;
   border-radius: 25px;
   transition: all .4s ease 0s;
 }
@@ -2785,7 +2785,7 @@ ul.mailbox-list li:hover a, ul.h-list li:hover a {
 	border: 1px solid rgba(0,0,0,.12);
 }
 .blog-date {
-    background: #03e1b8 none repeat scroll 0 0;
+    background: #c13734 none repeat scroll 0 0;
     border: 4px solid #fff;
     border-radius: 50%;
     bottom: -25px;

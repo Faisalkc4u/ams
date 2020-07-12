@@ -107,8 +107,8 @@
                             <!-- Welcome Text -->
                             <div class="col-12 col-md-9 col-lg-6">
                                 <div class="welcome-text">
-                                    <h2 data-animation="fadeInUp" data-delay="100ms"><br>SIST <br> </h2>
-                                    <p data-animation="fadeInUp" data-delay="400ms">“School of Information Science & Technology, Department of 
+                                    <h2 data-animation="fadeInUp" data-delay="100ms"  style="color:white; ;"><br>SIST <br> </h2>
+                                    <p data-animation="fadeInUp" data-delay="400ms"  style="color:white; font-size:22px!important">“School of Information Science & Technology, Department of 
                                     Information Technology, Mangattuparamba, Kannur University Campus. Department of Information Technology 
                                     imparts students the knowledge to understands and engage 
                                     with the technological society in which they live and the skills that will lead to successful careers.”</p>

@@ -103,7 +103,7 @@
 									<!--	<input type="checkbox" class="i-checks"> Remember me </label>-->
                                 <!--<p class="help-block small">(if this is a private computer)</p>-->
                             </div>
-                            <button class="btn btn-success btn-block loginbtn">Login</button>
+                            <button class="btn btn-success btn-block loginbtn" style="background-color:#a94442;border-color:#a94442">Login</button>
                             <!--<a class="btn btn-default btn-block" href="#">Register</a>-->
                         <?php echo form_close();?>
                     </div>

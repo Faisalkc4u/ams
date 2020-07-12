@@ -113,8 +113,18 @@
            echo $output; ?>
         </div>
     </div>
-
-
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
       
 <!-- Footer Area Start -->
 <footer class="footer-area section-padding-80-0">
@@ -132,8 +142,8 @@
                         <!-- Copywrite Text -->
                         <div class="copywrite-text">
                            <br><br><br><br><br><br><br><br><br> <p> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                 Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
+                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
                 </div>
@@ -177,8 +187,8 @@ Copyright &copy;<script></script> All rights reserved <i class="" aria-hidden="t
                 </div>
 
             </div>
-        </div>
-  </div>
+        
+         </div>
     </footer>
     <!-- Footer Area End -->
 

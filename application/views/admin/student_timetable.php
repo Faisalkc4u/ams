@@ -778,7 +778,7 @@
 <?php }?></li>
               </ul></div>
                                 <ul id="myTab3" class="tab-review-design">
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><li class="active"><a href="#description"><i class="" aria-hidden="true"></i>  Set Students' Timetable</a></li>
+                                <br><br><br>><li class="active"><a href="#description"><i class="" aria-hidden="true"></i>  Set Students' Timetable</a></li>
                                    <!--<li><a href="#reviews"><i class="fa fa-file-image-o" aria-hidden="true"></i> Pictures</a></li>
                                     <li><a href="#INFORMATION"><i class="fa fa-commenting" aria-hidden="true"></i> Review</a></li>
                                 </ul>-->
@@ -988,6 +988,7 @@
                 </div>
             </div>
         </div> 
+        <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>  <br><br><br>
         <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">

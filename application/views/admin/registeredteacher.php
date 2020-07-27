@@ -129,7 +129,7 @@
                        
                                 <ul id="myTab3" class="tab-review-design">
                                     <!--<li class="active"><a href="Add Student.html"><i class="" aria-hidden=""></i>View Registered Stuents</a></li>-->
-                                     <h4><br>View Registered Teacher</h4>
+                                     <h4><br><br>View Registered Teacher</h4>
                                 <div id="" class="">
                               
                                         <div class="">

@@ -165,7 +165,7 @@
     <section class="welcome-area">
         <div class="welcome-slides owl-carousel">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image:url(http://www.kannuruniversity.ac.in/images/slides/thavakkaracampus.jpg)" >
+            <div class="single-welcome-slide bg-img" style="background-image:url(http://www.kannuruniversity.ac.in/images/slides/slide7.jpg)" >
             <!-- change this image later -->
             
                 <!-- Welcome Content -->

@@ -101,7 +101,9 @@
                                             
  
 <!--                                            <li><a href="<?php echo base_url();?>index.php/studentctlr/studattend">View Attendence</a></li>-->
+<li><a href="<?php echo base_url();?>index.php/studentctlr/research_change_password">View Attendance</a>
 <li><a href="<?php echo base_url();?>index.php/studentctlr/research_change_password">Change Password</a>
+
                                             <!--                                                
 <ul class="dropdown">
                                                 <li><a href="<?php echo base_url();?>index.php/studentctlr/student_profile">Profile</a></li>
@@ -155,7 +157,7 @@
     <section class="welcome-area">
         <div class="">
             <!-- Single Welcome Slide -->
-            <div class="single-welcome-slide bg-img" style="background-image: url(http://www.kannuruniversity.ac.in/images/slides/slide7.jpg44;">
+            <div class="single-welcome-slide bg-img" style="background-image: url(http://www.kannuruniversity.ac.in/images/slides/slide7.jpg);">
                 <!-- Welcome Content -->
                 <div class="welcome-content h-100" style="background-color:#ffe6ff">
                     <div class="container h-100">

@@ -1,5 +1,5 @@
 <div class="sidebar-header">
-                <a href="<?php echo base_url(); ?>assets/index.html"><img class="main-logo" src="<?php echo base_url(); ?>assets/img/logo/itsist.jpg" alt="" /></a>
+                <a href="<?php echo base_url(); ?>assets/index.html"><img class="main-logo" src="<?php echo base_url(); ?>assets/img/logo/logo.jpg" alt="" /></a>
                 <strong><img src="<?php echo base_url(); ?>assets/img/logo/sist.jpg" alt="" /></strong>
             </div>
 <div class="left-custom-menu-adp-wrap comment-scrollbar">
